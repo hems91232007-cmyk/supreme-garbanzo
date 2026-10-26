@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="description" content="Campus Connect brings your timetable, attendance, notices, events and campus facilities together." />
+  <title>Campus Connect | Your College, One Place</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="dashboard" aria-label="Campus Connect home">
+        <span class="brand-mark">🎓</span>
+        <span><strong>Campus<span>Connect</span></strong><small>YOUR CAMPUS, CONNECTED</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="timetable"><span>▦</span> Timetable</button>
+        <button class="nav-item" data-page="attendance"><span>◔</span> Attendance</button>
+        <button class="nav-item" data-page="notices"><span>▤</span> Notices & Events <i class="nav-dot"></i></button>
+        <button class="nav-item" data-page="campus"><span>⌖</span> Campus Map</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-icon">✦</span><strong>Need a hand?</strong><p>Explore your campus with everything in one place.</p><button data-page="campus">Explore campus ↗</button></div>
+        <div class="profile-mini"><div class="avatar">P</div><div><strong>Priya Sharma</strong><small>Computer Science · Year 2</small></div><button class="more-btn" aria-label="Profile options">•••</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb"><span>Campus Connect</span><b>/</b><strong id="pageCrumb">Dashboard</strong></div>
+        <div class="top-actions">
+          <label class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search anything..." aria-label="Search notices and subjects" /></label>
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">♧<i></i></button>
+          <button class="top-avatar" id="profileButton" aria-label="Student profile">P</button>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="welcome-row">
+          <div><p class="eyebrow" id="todayLabel">THURSDAY, OCTOBER 22</p><h1>Good morning, Priya <span class="wave">✦</span></h1><p class="muted">Ready to make today count? Here's your campus at a glance.</p></div>
+          <div class="semester-pill"><span class="live-dot"></span> Semester 3 · 2026</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-copy"><span class="hero-kicker">YOUR DAY, ORGANIZED</span><h2>Everything you need.<br/><em>All in one place.</em></h2><p>Keep track of classes, stay updated with campus news, and make the most of your college life.</p><button class="button button-light" data-page="timetable">View today's schedule <span>→</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="building"><div class="roof"></div><div class="building-body"><div class="window-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="door"></div></div></div><div class="plant plant-one">♣</div><div class="plant plant-two">♣</div></div>
+        </div>
+        <div class="section-heading"><div><h2>Your overview</h2><p class="muted">A quick look at your academic progress</p></div><button class="text-button" data-page="attendance">View attendance →</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">▦</span><span class="trend positive">↗ 2 this week</span></div><p>Classes today</p><div class="stat-number">4 <small>/ 6</small></div><div class="mini-progress"><span style="width:67%"></span></div><small class="stat-foot">Next class at 10:00 AM</small></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon green">◔</span><span class="trend positive">On track</span></div><p>Overall attendance</p><div class="stat-number">85<small>%</small></div><div class="mini-progress green-progress"><span style="width:85%"></span></div><small class="stat-foot">Keep up the good work!</small></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon orange">▤</span><span class="trend">2 new</span></div><p>Unread notices</p><div class="stat-number">3</div><div class="notice-avatars"><span>📣</span><span>📅</span><span>🎭</span><small>Latest campus updates</small></div></article>
+        </div>
+        <div class="dashboard-columns">
+          <section class="panel schedule-panel"><div class="panel-heading"><div><h2>Today's classes</h2><p class="muted">Your schedule for today</p></div><button class="text-button" data-page="timetable">Full timetable →</button></div><div id="dashboardSchedule" class="class-list"></div></section>
+          <section class="panel notice-panel"><div class="panel-heading"><div><h2>Campus updates</h2><p class="muted">Don't miss what's happening</p></div><button class="text-button" data-page="notices">See all →</button></div><div id="dashboardNotices" class="update-list"></div></section>
+        </div>
+        <section class="panel quick-panel"><div class="panel-heading"><div><h2>Quick access</h2><p class="muted">Your most-used campus tools</p></div></div><div class="quick-grid"><button class="quick-link" data-page="timetable"><span class="quick-icon q-blue">▦</span><span><strong>Timetable</strong><small>View your classes</small></span><b>↗</b></button><button class="quick-link" data-page="attendance"><span class="quick-icon q-green">◔</span><span><strong>Attendance</strong><small>Track your progress</small></span><b>↗</b></button><button class="quick-link" data-page="notices"><span class="quick-icon q-orange">▤</span><span><strong>Notices & events</strong><small>What's happening</small></span><b>↗</b></button><button class="quick-link" data-page="campus"><span class="quick-icon q-purple">⌖</span><span><strong>Campus map</strong><small>Find your way around</small></span><b>↗</b></button></div></section>
+      </section>
+
+      <section class="page" id="page-timetable">
+        <div class="page-title-row"><div><p class="eyebrow">PLAN YOUR DAY</p><h1>Class timetable</h1><p class="muted">Your weekly schedule, without the guesswork.</p></div><button class="button button-primary" id="downloadSchedule">↓ Export schedule</button></div>
+        <div class="panel"><div class="week-tabs" id="weekTabs"><button data-day="Mon">Mon <small>20</small></button><button data-day="Tue">Tue <small>21</small></button><button class="selected" data-day="Wed">Wed <small>22</small></button><button data-day="Thu">Thu <small>23</small></button><button data-day="Fri">Fri <small>24</small></button></div><div class="schedule-summary"><span><i class="live-dot"></i> <strong id="selectedDayLabel">Wednesday's schedule</strong></span><span>4 classes · 8:30 AM – 3:30 PM</span></div><div id="fullSchedule" class="full-schedule"></div></div>
+      </section>
+
+      <section class="page" id="page-attendance">
+        <div class="page-title-row"><div><p class="eyebrow">YOUR ACADEMIC PROGRESS</p><h1>Attendance overview</h1><p class="muted">Small steps every day make a big difference.</p></div><span class="semester-pill">Semester 3 · 2026</span></div>
+        <div class="attendance-hero panel"><div class="attendance-ring"><svg viewBox="0 0 120 120" aria-label="85 percent attendance"><circle cx="60" cy="60" r="49" class="ring-bg"/><circle cx="60" cy="60" r="49" class="ring-value"/></svg><div><strong>85%</strong><small>Overall</small></div></div><div class="attendance-copy"><span class="badge badge-green">● Good standing</span><h2>You're doing great, Priya!</h2><p class="muted">Your attendance is above the recommended 75% threshold. Keep showing up and stay consistent.</p><div class="attendance-legend"><span><i class="legend-dot green-dot"></i> Present</span><span><i class="legend-dot grey-dot"></i> Remaining</span></div></div><div class="attendance-mini"><small>Classes attended</small><strong>102 <span>/ 120</span></strong><small class="muted">18 classes missed</small><div class="mini-progress green-progress"><span style="width:85%"></span></div></div></div>
+        <div class="section-heading"><div><h2>Subject breakdown</h2><p class="muted">Attendance by subject for this semester</p></div><span class="small-note">Sample data for prototype</span></div>
+        <div class="panel subject-table-wrap"><table class="subject-table"><thead><tr><th>Subject</th><th>Faculty</th><th>Attended</th><th>Attendance</th><th>Status</th></tr></thead><tbody id="subjectRows"></tbody></table></div>
+      </section>
+
+      <section class="page" id="page-notices">
+        <div class="page-title-row"><div><p class="eyebrow">STAY IN THE LOOP</p><h1>Notices & events</h1><p class="muted">The latest news from around your campus.</p></div><button class="button button-primary" id="markAllRead">✓ Mark all as read</button></div>
+        <div class="notice-filters"><button class="filter-tab active" data-filter="All">All updates <span>6</span></button><button class="filter-tab" data-filter="Notice">Notices</button><button class="filter-tab" data-filter="Event">Events</button></div>
+        <div id="noticeGrid" class="notice-grid"></div>
+      </section>
+
+      <section class="page" id="page-campus">
+        <div class="page-title-row"><div><p class="eyebrow">FIND YOUR WAY</p><h1>Explore campus</h1><p class="muted">Your guide to the places that make college feel like home.</p></div><label class="search-box campus-search"><span>⌕</span><input id="campusSearch" type="search" placeholder="Find a place..." /></label></div>
+        <div class="campus-layout"><div class="campus-map" role="img" aria-label="Illustrated campus map with locations"><div class="map-road road-a"></div><div class="map-road road-b"></div><div class="map-lawn lawn-a"></div><div class="map-lawn lawn-b"></div><button class="map-pin pin-library" data-place="Library"><span>▣</span> Library</button><button class="map-pin pin-block" data-place="Academic Block A"><span>▦</span> Block A</button><button class="map-pin pin-cafe" data-place="Cafeteria"><span>☕</span> Cafeteria</button><button class="map-pin pin-sports" data-place="Sports Ground"><span>⚽</span> Sports Ground</button><button class="map-pin pin-lab" data-place="Computer Lab"><span>⌘</span> Computer Lab</button><div class="map-compass">N<br/>↑</div><div class="map-caption">CAMPUS MAP · ILLUSTRATION</div></div><div class="panel places-panel"><div class="panel-heading"><div><h2>Campus places</h2><p class="muted">Tap a place to see details</p></div></div><div id="placeList" class="place-list"></div><div class="place-detail" id="placeDetail"><span class="detail-icon">⌖</span><strong>Choose a place</strong><p class="muted">Select a location on the map or list to see more information.</p></div></div></div>
+      </section>
+
+      <footer class="footer"><span>© 2026 Campus Connect · Student project prototype</span><span>Made for a better campus experience <b>♥</b></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
